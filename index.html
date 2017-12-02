@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录</title>
+	<link rel="stylesheet" href="css/lianxi.css">
+</head>
+<body>
+	<div class="box">
+		<main>
+			<label for="" class="lb1">用户名：</label>
+			<input type="text" class="username" name="username" placeholder="请输入用户名">
+			<section></section>
+			<label for="" class="lb1">密码：</label>
+			<input type="password" class="password" name="password" placeholder="请输入密码" autocomplete="off">
+			<input type="submit" class="submit" value="登录">
+		</main>
+	</div>
+</body>
+</html>
+<script>
+	let username = document.querySelector('.username');
+	let password = document.querySelector('.password');
+	let submit = document.querySelector('.submit');
+	submit.onclick = function(){
+		if(username.value.trim() == 'admin' && password.value.trim() == '123123'){
+			alter('登陆成功');
+		}else{
+			location.replace('error.html');
+		}
+	}
+</script>

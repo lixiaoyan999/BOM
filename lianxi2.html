@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>跳转</title>
+	<link rel="stylesheet" href="css/lianxi2.css">
+</head>
+<body>
+	<div class="box">
+		<main>
+			<h3>错误提示</h3>
+			<p><span>5</span>秒后返回登录页面</p>
+			<input type="submit" value="返回登录" class="submit"
+			>
+		</main>
+	</div>
+</body>
+</html>
+<script>
+	let submit = document.querySelector('.submit');
+	submit.onclick = function(){
+		location.replace('lianxi.html')
+	} 
+	let span = document.querySelector('span');
+	let num = 5;
+	var t = setInterval(function(){
+		span.innerText = num;
+		num--;
+		console.log(num);
+		if(num < 0){
+			clearInterval(t);
+			location.replace('lianxi.html');
+		}
+	},1000)
+
+</script>
