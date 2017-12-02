@@ -3,12 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>返回顶部</title>
+	<link rel="stylesheet" href="css/fanhui.css">
 </head>
 <style>
 	
 </style>
 <body>
-	<div class="top"></div>
+	<div class="topp"><span>返回顶部</span></div>
 	<div class="box"></div>
 </body>
 </html>
+<script>
+	let topp = document.querySelector('.topp');
+	topp.style.display ="none";
+	window.onscroll = function(){
+		if(document.documentElement.scrollTop > 100){
+			topp.style.display = "block";
+		}else{
+			topp.style.display = "none";
+		}
+		topp.onclick = function(){
+			document.documentElement.scrollTop = 0;
+		}
+	}
+</script>
