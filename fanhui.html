@@ -9,21 +9,24 @@
 	
 </style>
 <body>
-	<div class="topp"><span>返回顶部</span></div>
 	<div class="box"></div>
+	<div class="topp">返回顶部</div>	
 </body>
 </html>
 <script>
-	let topp = document.querySelector('.topp');
+	/* 1.获取top元素 */
+	var topp = document.querySelector('.topp');
 	topp.style.display ="none";
+	/* 2.获取当前滚动条的位置，当移动至相应位置时显示 */
 	window.onscroll = function(){
-		if(document.documentElement.scrollTop > 100){
+	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.scrollY || window.pageYOffset;
+		if(scrollTop > 100){
 			topp.style.display = "block";
 		}else{
 			topp.style.display = "none";
 		}
 		topp.onclick = function(){
-			document.documentElement.scrollTop = 0;
+			window.scroll(0,0);
 		}
 	}
 </script>

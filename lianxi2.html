@@ -22,15 +22,11 @@
 		location.replace('lianxi.html')
 	} 
 	let span = document.querySelector('span');
-	let num = 5;
 	var t = setInterval(function(){
-		span.innerText = num;
-		num--;
-		console.log(num);
-		if(num < 0){
+		span.innerText--;
+		if(span.innerText < 1){
 			clearInterval(t);
 			location.replace('lianxi.html');
 		}
 	},1000)
-
 </script>
